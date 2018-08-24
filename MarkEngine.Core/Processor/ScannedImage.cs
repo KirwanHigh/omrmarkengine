@@ -169,7 +169,8 @@ namespace OmrMarkEngine.Core.Processor
                         float radius = 0;
 
                         if (shapeChecker.IsCircle(blobCounter.GetBlobsEdgePoints(blob), out center, out radius) &&
-                            radius > currentCheck)
+                            (radius * 2) >= currentCheck)
+
                         {
                             controlPoints.Add(center);
                         }

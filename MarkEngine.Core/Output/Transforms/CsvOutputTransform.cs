@@ -83,7 +83,9 @@ namespace OmrMarkEngine.Output.Transforms
 
                     foreach(var pg in pages.Pages)
                     {
-                        foreach(var rw in pg.Details.OfType<OmrRowData>())
+                        // foreach(var rw in pg.Details.OfType<OmrRowData>())
+                        foreach (var rw in pg.Details.OfType<OmrRowData>())
+
                         {
                             sw.Write("{0},{1}", pg.Id, rw.Id);
                             OmrBarcodeData[] barcodes = rw.Details.OfType<OmrBarcodeData>().ToArray();

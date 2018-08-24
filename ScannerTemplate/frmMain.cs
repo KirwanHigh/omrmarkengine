@@ -604,7 +604,10 @@ namespace ScannerTemplate
                 Image image = null;
                 lock(this.m_syncObject)
                     image = Image.FromFile(m_processQueue.Dequeue());
-                image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+                // Unnecessary flip
+                // image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
                 Engine engineProcessor = new Engine();
                 var scannedImage = new ScannedImage(image);
                 var output = engineProcessor.ApplyTemplate(this.m_currentTemplate, scannedImage);
